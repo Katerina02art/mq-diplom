@@ -105,8 +105,6 @@ body {
 }
 
 .popup-often {
-  display: flex;
-  flex-direction: column;
 }
 
 .popup-select-label {
@@ -116,21 +114,15 @@ body {
 .popup-select-field {
   display: inline-block;
   box-sizing: border-box;
-
   width: 100%;
   height: 48px;
-
   padding-left: 20px;
-
   color: rgba(0, 0, 0, 0.54);
-
   background-color: #f4f7f6;
   border: none;
-
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
   background-image: url("../svg/form-arrows.svg");
   background-repeat: no-repeat;
   background-size: 10px;
@@ -190,21 +182,17 @@ body {
 
 .popup-radio:checked + .popup-radio-label-yes::before,
 .popup-radio:checked + .popup-radio-label-no::before {
-  background-image: url(../svg/form-circle.svg);
+  background-image: url(../public/svg/form-circle.svg);
 }
 
 .popup-radio-label-yes,
 .popup-radio-label-no {
   margin-right: 10px;
-
   cursor: pointer;
 }
 
 .popup-content {
   margin-top: 30px;
-
-  display: flex;
-  flex-direction: column;
 }
 
 .popup-content-label {
@@ -411,25 +399,25 @@ body {
 }
 
 .trend-garden {
-  background-image: url("./img/trend1.jpg");
+  background-image: url("../public/img/trend1.jpg");
 }
 
 .trend-cheese {
-  background-image: url("./img/trend2.jpg");
+  background-image: url("../public/img/trend2.jpg");
 }
 
 .trend-hike {
-  background-image: url("./img/trend3.jpg");
+  background-image: url("../public/img/trend3.jpg");
 }
 
 .trend-limons {
-  background-image: url("./img/trend4.jpg");
+  background-image: url("../public/img/trend4.jpg");
 }
 
 .trend-body {
+  width: 100%;
   position: relative;
   z-index: 3;
-
   border: 3px solid rgba(181, 159, 91, 0.6);
   padding: 35px 33px 31px 33px;
 }
@@ -437,24 +425,20 @@ body {
 .trend-list {
   display: flex;
   flex-wrap: wrap;
-
   list-style: none;
-
-  margin-bottom: 10px;
+  margin: 0;
 }
 
 .trend-item {
   font-size: 14px;
   font-weight: bold;
-
   line-height: 1;
-
   text-transform: uppercase;
   margin-right: 16px;
 }
 
 .trend-list:last-child {
-  margin-right: 0;
+  margin: 0;
 }
 
 .trend-link {
@@ -932,19 +916,14 @@ body {
 
 .product-button {
   color: white;
-
   font-size: 14px;
   font-weight: bold;
-
   text-transform: uppercase;
-
   background-color: #b59f5b;
   border: none;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 140px;
   height: 48px;
 }
@@ -1065,7 +1044,7 @@ body {
 
   /*media tablet header*/
   .block-with-backround {
-    background-image: url("./img/banner-bg-tablet.jpg");
+    background-image: url("../public/img/banner-bg-tablet.jpg");
     padding-top: 43px;
     padding-bottom: 113px;
   }
@@ -1102,37 +1081,24 @@ body {
   }
 
   .header-button {
-    display: block;
-    width: 23px;
-    height: 18px;
-    text-indent: -9999px;
-    background-color: transparent;
-    border: none;
-    padding: 0;
+    width: 30px;
+    height: 24px;
     position: relative;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .header-button::before {
-    top: 1px;
-  }
-
-  .header-button::before,
-  .header-button::after {
-    content: "";
+  .header-button__line {
+    display: block;
     width: 100%;
     height: 3px;
-    background-color: #ffffff;
-    position: absolute;
-    left: 0;
-  }
-
-  .header-button-label {
-    width: 100%;
-    height: 3px;
-    background-color: #ffffff;
-    position: absolute;
-    left: 0;
+    background: #fff;
+    transition: all 0.3s ease;
   }
 
   .intro {
@@ -1182,6 +1148,8 @@ body {
   /* Основной контент */
 
   .container {
+    max-width: 100%;
+    width: 100%;
     margin: 50px auto 0;
     padding: 0 35px;
   }
@@ -1189,13 +1157,15 @@ body {
   /*media tablet блок со статьями*/
 
   .main {
-    margin-right: 5px;
+    flex: 1;
+    min-width: 0;
   }
 
   .article {
     display: flex;
     flex-direction: column;
     max-width: 100%;
+    overflow: hidden;
   }
 
   .article:nth-last-child(n + 2) {
@@ -1204,12 +1174,15 @@ body {
 
   .article-picture {
     width: 100%;
-    max-width: 391px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    align-self: flex-start;
   }
 
   .article-content {
-    margin-left: 0;
-    padding-right: 30px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .article-tags-list {
@@ -1240,20 +1213,9 @@ body {
 
   /* aside */
 
-  .columns {
-    flex-direction: column;
-  }
-
-  .main {
-    order: 1;
-    max-width: 100%;
-    margin-right: 0;
-  }
-
   .aside {
-    order: 2;
-    width: 100%;
-    margin-left: 0;
+    width: 300px;
+    flex-shrink: 0;
   }
 
   .side-bar-title {
@@ -1265,6 +1227,102 @@ body {
 
   .side-bar-title::after {
     margin: 7px auto 20px;
+  }
+
+  .search-container {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  /* Форма поиска */
+  .search {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .search-label {
+    display: flex;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .search-field {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    min-height: 48px;
+  }
+
+  .search-button {
+    position: relative;
+    width: 50px;
+    height: 100%;
+    background-color: #b59f5b;
+  }
+
+  .search-button::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: center;
+  }
+
+  /* Форма подписки */
+  .subcribe {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .side-bar-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .subcribe-mail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-label {
+    display: flex;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    background: #b59f5b;
+  }
+
+  .subcribe-field {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #e1e1e1;
+    font-size: 16px;
+    box-sizing: border-box;
+    min-height: 48px;
+  }
+
+  .subcribe-button {
+    width: 100%;
+    padding: 14px;
+    background: #b59f5b;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .subcribe-button:hover {
+    background: #b59f5b;
   }
   /* Изделия */
 
@@ -1626,6 +1684,96 @@ body {
 
   .search-field {
     padding: 21px 16px 20px 16px;
+  }
+
+  /* Форма поиска */
+  .search {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .search-label {
+    display: flex;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .search-field {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    min-height: 48px;
+  }
+
+  .search-button {
+    position: relative;
+    width: 50px;
+    height: 100%;
+    background-color: #b59f5b;
+  }
+
+  .search-button::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: center;
+  }
+
+  /* Форма подписки */
+  .subcribe {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .side-bar-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .subcribe-mail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-label {
+    display: flex;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    background: #b59f5b;
+  }
+
+  .subcribe-field {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #e1e1e1;
+    font-size: 16px;
+    box-sizing: border-box;
+    min-height: 48px;
+  }
+
+  .subcribe-button {
+    width: 100%;
+    padding: 14px;
+    background: #b59f5b;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .subcribe-button:hover {
+    background: #b59f5b;
   }
 
   /*mobile форма подписки*/

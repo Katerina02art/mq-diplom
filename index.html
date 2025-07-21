@@ -7,7 +7,7 @@
     <title>Vite App</title>
   </head>
   <body>
-     <!-- pop up -->
+    <!-- pop up -->
 
   <div class="popup popup-hidden">
 
@@ -55,7 +55,7 @@
 
         </label>
 
-        <span class="form-hidden">Кнопка "Отправить"</span>
+        <span class="form-hidden"></span>
 
         <button class="popup-button" type="submit">Отправить</button>
 
@@ -99,8 +99,10 @@
               </ul>
             </nav>
 
-            <button class="header-button">
-              <span class="header-button-label">Открыть меню</span>
+            <button class="header-button" aria-label="Меню">
+              <span class="header-button__line"></span>
+              <span class="header-button__line"></span>
+              <span class="header-button__line"></span>
             </button>
           </header>
           <h1 class="intro">Блог о творчестве, спорте, и образе жизни</h1>
@@ -640,11 +642,11 @@
 
         <div class="product-img-wrap">
           <picture>
-            <source srcset="img/shop-item-desk1.jpg" media="(min-width: 1200px)">
-            <source srcset="img/shop-item-tablet1.jpg" media="(min-width: 768px)">
-            <source srcset="img/shop-item-mobile1.jpg" media="(max-width: 767px)">
-           
-            <img class="product-img" src="img/shop-item-desk1.jpg" alt="фотография подушка в наволочке с принтом Hang Out Spot">
+            <source srcset="../public/img/shop-item-desk1.jpg" media="(min-width: 1200px)">
+            <source srcset="../public/img/shop-item-tablet1.jpg" media="(min-width: 768px)">
+            <source srcset="../public/img/shop-item-mobile1.jpg" media="(max-width: 767px)">
+          
+            <img class="product-img" src="../public/img/shop-item-desk1.jpg" alt="фотография подушка в наволочке с принтом Hang Out Spot">
           </picture>
         </div>
 
@@ -663,7 +665,7 @@
               <div class="product-new-price">800 ₽</div>
             </div>
 
-            <button class="product-button">В магазин</button>
+            <a class="product-button">В магазин</a>
           </div>
 
         </div>
@@ -709,7 +711,7 @@
             <source srcset="img/shop-item-desk3.jpg" media="(min-width: 1200px)">
             <source srcset="img/shop-item-tablet3.jpg" media="(min-width: 768px)">
             <source srcset="img/shop-item-mobile3.jpg" media="(max-width: 767px)">
-           
+          
             <img class="product-img" src="img/shop-item-desk3.jpg" alt="шестиугольная деревянная рамка рядом с вазой с сухоцветами">
           </picture>
         </div>
